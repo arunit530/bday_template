@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Magic Surprise (Gradient Purple) 💜 | Suniska's Birthday</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royal: {
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            200: '#f5d0fe',
+                            300: '#e879f9',
+                            400: '#d946ef',
+                            500: '#c026d3',
+                            600: '#a21caf',
+                            700: '#86198f',
+                            800: '#581c87',
+                            900: '#3b0764',
+                            950: '#2e0854'
+                        },
+                        lavender: {
+                            light: '#e9d5ff',
+                            DEFAULT: '#c084fc',
+                            dark: '#7e22ce'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Poppins', 'sans-serif'],
+                        handwriting: ['Caveat', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e0533 0%, #311059 45%, #4c1d95 80%, #290847 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #f3e8ff;
+        }
+
+        /* Twinkling Stars */
+        .star {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.15; transform: scale(0.7); }
+            50% { opacity: 1; transform: scale(1.4); }
+        }
+
+        /* Floating glowing background nebulas */
+        @keyframes floatNebula {
+            0% { transform: translateY(0) translateX(0) scale(1); }
+            50% { transform: translateY(-40px) translateX(30px) scale(1.15); }
+            100% { transform: translateY(0) translateX(0) scale(1); }
+        }
+        .nebula {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.28;
+            pointer-events: none;
+            animation: floatNebula 14s ease-in-out infinite alternate;
+        }
+
+        /* Gradient Purple Glassmorphism Card */
+        .glass-card {
+            background: rgba(46, 8, 84, 0.55);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(232, 121, 249, 0.25);
+            box-shadow: 0 30px 60px -15px rgba(20, 2, 40, 0.95), inset 0 0 40px rgba(232, 121, 249, 0.08);
+        }
+
+        /* Layer Pop & Transition Animations */
+        @keyframes layerPop {
+            0% { transform: scale(0.75) rotate(-4deg); opacity: 0; }
+            55% { transform: scale(1.06) rotate(2deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        .layer-appear {
+            animation: layerPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes unlockEffect {
+            0% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.35) rotate(18deg); opacity: 0.2; filter: blur(8px); }
+            100% { transform: scale(0.1); opacity: 0; }
+        }
+        .unlock-anim {
+            animation: unlockEffect 0.45s ease-in-out forwards;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e0533;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c084fc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-slate-100 relative">
+
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="nebula w-96 h-96 bg-purple-700 top-10 left-10" style="animation-delay: 0s;"></div>
+        <div class="nebula w-[34rem] h-[34rem] bg-fuchsia-800 bottom-10 right-5" style="animation-delay: 3s;"></div>
+        <div class="nebula w-80 h-80 bg-violet-800 top-1/2 left-1/3" style="animation-delay: 1.5s;"></div>
+
+        <!-- Twinkling Stars -->
+        <div class="star" style="top: 7%; left: 10%; width: 2px; height: 2px; --duration: 3s;"></div>
+        <div class="star" style="top: 20%; left: 85%; width: 3px; height: 3px; --duration: 4.2s;"></div>
+        <div class="star" style="top: 15%; left: 50%; width: 2px; height: 2px; --duration: 2.5s;"></div>
+        <div class="star" style="top: 40%; left: 18%; width: 3px; height: 3px; --duration: 5.1s;"></div>
+        <div class="star" style="top: 75%; left: 82%; width: 2px; height: 2px; --duration: 3.6s;"></div>
+        <div class="star" style="top: 85%; left: 22%; width: 3px; height: 3px; --duration: 4s;"></div>
+        <div class="star" style="top: 55%; left: 8%; width: 2px; height: 2px; --duration: 3.1s;"></div>
+        <div class="star" style="top: 25%; left: 90%; width: 2px; height: 2px; --duration: 4.7s;"></div>
+        <div class="star" style="top: 65%; left: 72%; width: 3px; height: 3px; --duration: 3.8s;"></div>
+    </div>
+
+    <header class="relative z-10 py-6 px-4 text-center max-w-4xl mx-auto w-full flex items-center justify-between">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-purple-950/70 text-purple-200 border border-purple-400/30 shadow-sm backdrop-blur-md">
+            <i class="fa-solid fa-wand-magic-sparkles text-purple-300 animate-pulse"></i> 5-Layer Purple Magic Surprise
+        </div>
+        <button onclick="resetLayers()" class="text-xs font-semibold px-4 py-2 rounded-full bg-purple-950/70 hover:bg-purple-900 text-purple-200 transition-colors shadow-sm flex items-center gap-1.5 cursor-pointer border border-purple-400/30 backdrop-blur-md">
+            <i class="fa-solid fa-rotate-right"></i> Restart Journey
+        </button>
+    </header>
+
+    <main class="flex-grow relative z-10 max-w-2xl mx-auto px-4 pb-20 w-full flex flex-col items-center justify-center space-y-6">
+
+        <!-- Hero Title -->
+        <div id="header-title" class="text-center space-y-2">
+            <span class="text-xs uppercase tracking-widest text-purple-300 font-semibold bg-purple-950/60 px-4 py-1.5 rounded-full border border-purple-400/30 backdrop-blur-sm">
+                Suniska's Special Birthday Surprise 💜✨
+            </span>
+            <h1 class="font-serif text-3xl md:text-5xl font-bold text-white leading-tight">
+                The Starlight Artifacts 🔮
+            </h1>
+            <p id="layer-subtitle" class="font-handwriting text-2xl md:text-3xl text-purple-200 pt-1">
+                "Unlocking mystical layers of royal purple magic..."
+            </p>
+        </div>
+
+        <!-- MAIN CARD -->
+        <div class="glass-card rounded-3xl p-8 md:p-12 w-full flex flex-col items-center justify-center relative shadow-2xl text-center space-y-6">
+            
+            <!-- Layer Progress Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-950/80 text-purple-200 text-xs font-semibold border border-purple-400/30 shadow-inner">
+                <i class="fa-solid fa-layer-group text-purple-300"></i> Phase <span id="current-layer-num">1</span> of 5
+            </div>
+
+            <!-- INTERACTIVE STAGE -->
+            <div id="interactive-stage" class="w-full flex flex-col items-center justify-center layer-appear py-4 space-y-6">
+                
+                <!-- Dynamic Visual Artifact Wrapper -->
+                <div id="artifact-wrapper" class="w-48 h-48 md:w-56 md:h-56 relative cursor-pointer transform hover:scale-105 transition-transform flex items-center justify-center" onclick="unlockNextLayer()">
+                    <!-- Rendered via JavaScript depending on layer -->
+                </div>
+
+                <!-- Playful Message for the current layer -->
+                <div class="space-y-2">
+                    <h3 id="layer-message" class="font-serif text-2xl md:text-3xl font-bold text-white">
+                        Phase 1: The Crystal Ball 🔮
+                    </h3>
+                    <p id="layer-hint" class="text-xs text-purple-300 font-medium">
+                        Wait, there's more magic... open the next layer!
+                    </p>
+                </div>
+
+                <!-- UNLOCK BUTTON -->
+                <button onclick="unlockNextLayer()" class="bg-gradient-to-r from-purple-600 via-fuchsia-600 to-violet-600 hover:from-purple-500 hover:to-violet-500 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-purple-950/60 transition-all flex items-center gap-2 transform hover:scale-105 cursor-pointer border border-purple-300/40">
+                    <i class="fa-solid fa-sparkles"></i> <span id="button-label">OPEN CRYSTAL BALL ✨</span>
+                </button>
+
+            </div>
+
+            <div id="final-reveal-stage" class="w-full hidden space-y-6 layer-appear">
+                
+                <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-purple-500 via-fuchsia-600 to-amber-300 text-white text-3xl flex items-center justify-center shadow-2xl animate-bounce border-2 border-purple-200">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-purple-300 font-semibold">All 5 Starlight Artifacts Unlocked! 🎉</span>
+                    <h2 class="font-serif text-2xl md:text-4xl font-bold text-white">
+                        Happy Birthday Suniska! 💜
+                    </h2>
+                    <p class="font-handwriting text-2xl md:text-3xl text-purple-200 pt-1">
+                        "You’ve journeyed through the entire lavender cosmos!"
+                    </p>
+                </div>
+
+                <!-- Polaroid Memory Card with the Custom Image URL Variable -->
+                <div class="bg-purple-950/85 backdrop-blur-md rounded-2xl p-6 border border-purple-400/30 text-slate-200 font-medium text-sm md:text-base leading-relaxed text-center shadow-inner space-y-4">
+                    
+                    <div class="bg-white text-slate-800 p-4 pb-3 rounded-xl shadow-lg max-w-xs mx-auto transform -rotate-1 hover:rotate-0 transition-transform">
+                        
+                        <!-- Embedded Photo Frame (CUSTOM_IMAGE_URL applied here) -->
+                        <div class="w-full h-64 bg-purple-100 rounded-lg overflow-hidden shadow-inner flex items-center justify-center relative">
+                            <img id="final-custom-img" src="" alt="Suniska's Birthday Memory" class="w-full h-full object-cover">
+                        </div>
+
+                        <p class="font-handwriting text-xl text-slate-900 font-bold mt-2">Suniska's Birthday 💜✨</p>
+                    </div>
+                    
+                    <p class="font-serif italic text-base md:text-lg text-purple-100 pt-1">
+                        "Dear Suniska, thank you for lighting up our universe with your endless laughter, beautiful heart, and starry soul. May your birthday shine brighter than a million galaxies!" ✨
+                    </p>
+                </div>
+
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button onclick="resetLayers()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-purple-900 hover:bg-purple-800 text-purple-200 px-6 py-3 rounded-xl font-medium transition-colors shadow-sm cursor-pointer border border-purple-400/30">
+                        <i class="fa-solid fa-rotate-right"></i> Play Again
+                    </button>
+                    <button onclick="triggerGrandCelebration()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 via-fuchsia-600 to-violet-600 hover:from-purple-500 hover:to-violet-500 text-white font-bold px-8 py-3 rounded-xl shadow-lg shadow-purple-950/60 transition-all border border-purple-300/40 cursor-pointer">
+                        <i class="fa-solid fa-sparkles"></i> More Confetti!
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        // =========================================================================
+        // CUSTOM IMAGE URL VARIABLE: Easily replace this string with your image URL or Base64
+        // =========================================================================
+        const CUSTOM_IMAGE_URL = 'C:/Users/Arunit/Downloads/wkwk.jpg'; 
+
+        const layersData = [
+            {
+                layer: 1,
+                name: "The Crystal Ball",
+                message: "Phase 1: The Crystal Ball 🔮",
+                hint: "Wait, there's more magic... open the next layer!",
+                buttonText: "OPEN CRYSTAL BALL ✨",
+                svgContent: `
+                    <div class="relative w-44 h-44 rounded-full bg-gradient-to-tr from-purple-600 via-fuchsia-500 to-violet-400 shadow-[0_0_60px_rgba(192,38,211,0.7)] flex items-center justify-center border-4 border-purple-200/60 animate-pulse">
+                        <div class="absolute inset-2 rounded-full bg-purple-950/50 backdrop-blur-sm flex items-center justify-center">
+                            <i class="fa-solid fa-crystal-ball text-6xl text-purple-200 drop-shadow-lg"></i>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                layer: 2,
+                name: "The Enchanted Scroll",
+                message: "Phase 2: The Enchanted Scroll 📜",
+                hint: "Not quite done yet! Keep going...",
+                buttonText: "UNFURL SCROLL 📜",
+                svgContent: `
+                    <div class="relative w-40 h-44 bg-purple-50 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 border-2 border-purple-200 transform -rotate-3 hover:rotate-0 transition-transform">
+                        <div class="absolute inset-x-0 top-1/2 h-6 bg-purple-600 flex items-center justify-center shadow-md">
+                            <i class="fa-solid fa-star text-amber-300 text-xs"></i>
+                        </div>
+                        <i class="fa-solid fa-scroll text-5xl text-purple-800 mb-2"></i>
+                        <span class="font-handwriting text-purple-950 text-xs font-bold mt-2">Cosmic Decree</span>
+                    </div>
+                `
+            },
+            {
+                layer: 3,
+                name: "The Celestial Music Box",
+                message: "Phase 3: The Celestial Music Box 🎶",
+                hint: "Almost there! Just a couple more secrets...",
+                buttonText: "PLAY MUSIC BOX 🎵",
+                svgContent: `
+                    <div class="relative w-44 h-40 bg-gradient-to-tr from-purple-900 to-violet-950 rounded-2xl shadow-2xl flex flex-col items-center justify-center border-2 border-purple-300/50 p-4">
+                        <div class="absolute top-2 right-3 w-6 h-6 rounded-full bg-amber-400 border border-amber-200 shadow-md flex items-center justify-center animate-spin">
+                            <i class="fa-solid fa-star text-[10px] text-purple-950"></i>
+                        </div>
+                        <i class="fa-solid fa-box-archive text-5xl text-purple-300 mb-2"></i>
+                        <span class="font-handwriting text-purple-200 text-sm">Lavender Melody</span>
+                    </div>
+                `
+            },
+            {
+                layer: 4,
+                name: "The Heart Locket",
+                message: "Phase 4: The Heart Locket 💖",
+                hint: "Okay okay 😭 you actually made it to the final layer...",
+                buttonText: "UNLOCK LOCKET 🗝️",
+                svgContent: `
+                    <div class="relative w-44 h-44 rounded-full bg-gradient-to-tr from-purple-600 to-fuchsia-800 shadow-[0_0_50px_rgba(162,28,175,0.7)] flex items-center justify-center border-4 border-purple-300/70">
+                        <div class="absolute -top-2 w-10 h-10 rounded-full border-4 border-purple-300 bg-transparent"></div>
+                        <i class="fa-solid fa-lock text-5xl text-purple-100 drop-shadow-md animate-bounce"></i>
+                    </div>
+                `
+            }
+        ];
+
+        let currentLayerIndex = 0;
+
+        function unlockNextLayer() {
+            const stage = document.getElementById('interactive-stage');
+            stage.classList.add('unlock-anim');
+
+            setTimeout(() => {
+                currentLayerIndex++;
+                stage.classList.remove('unlock-anim');
+
+                if (currentLayerIndex >= layersData.length) {
+                    // Show final reveal stage
+                    document.getElementById('interactive-stage').classList.add('hidden');
+                    document.getElementById('final-reveal-stage').classList.remove('hidden');
+                    document.getElementById('header-title').style.display = 'none';
+
+                    // Set custom image url
+                    document.getElementById('final-custom-img').src = CUSTOM_IMAGE_URL;
+
+                    triggerGrandCelebration();
+                } else {
+                    // Load next layer details
+                    const data = layersData[currentLayerIndex];
+                    document.getElementById('current-layer-num').innerText = data.layer;
+                    document.getElementById('layer-message').innerText = data.message;
+                    document.getElementById('layer-hint').innerText = data.hint;
+                    document.getElementById('button-label').innerText = data.buttonText;
+                    document.getElementById('artifact-wrapper').innerHTML = data.svgContent;
+                    document.getElementById('layer-subtitle').innerText = `"Phase ${data.layer} unlocked! Onward through the cosmos..."`;
+
+                    // Re-trigger appearance animation
+                    stage.classList.add('layer-appear');
+                    setTimeout(() => stage.classList.remove('layer-appear'), 600);
+
+                    // Small confetti burst per layer
+                    confetti({
+                        particleCount: 50,
+                        spread: 60,
+                        origin: { y: 0.6 },
+                        colors: ['#c084fc', '#e879f9', '#ffffff']
+                    });
+                }
+            }, 420);
+        }
+
+        function triggerGrandCelebration() {
+            confetti({
+                particleCount: 220,
+                spread: 140,
+                origin: { y: 0.5 },
+                colors: ['#c084fc', '#d946ef', '#fef08a', '#e9d5ff', '#ffffff']
+            });
+        }
+
+        function resetLayers() {
+            currentLayerIndex = 0;
+            document.getElementById('final-reveal-stage').classList.add('hidden');
+            document.getElementById('interactive-stage').classList.remove('hidden');
+            document.getElementById('header-title').style.display = 'block';
+
+            const data = layersData[0];
+            document.getElementById('current-layer-num').innerText = data.layer;
+            document.getElementById('layer-message').innerText = data.message;
+            document.getElementById('layer-hint').innerText = data.hint;
+            document.getElementById('button-label').innerText = data.buttonText;
+            document.getElementById('artifact-wrapper').innerHTML = data.svgContent;
+            document.getElementById('layer-subtitle').innerText = `"Unlocking mystical layers of royal purple magic...(by tapping on the elements)"`;
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize first layer artifact on load
+        window.onload = function() {
+            document.getElementById('artifact-wrapper').innerHTML = layersData[0].svgContent;
+            document.getElementById('final-custom-img').src = CUSTOM_IMAGE_URL;
+        }
+    </script>
+</body>
+</html>
